@@ -1,0 +1,14 @@
+<!-- app/home/template.hbs -->
+
+
+<div class="page-container home-page">
+  <aside class="left">
+    {{profile-glance user=model.user}}
+  </aside>
+  
+  <!-- New code -->
+  <main>
+    {{status-update}}
+    {{chirps-list chirps=model.chirps}}
+  </main>
+</div>
