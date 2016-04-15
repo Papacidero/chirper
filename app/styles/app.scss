@@ -2,8 +2,10 @@
 @import "ui";
 @import "header";
 @import "profile";
-@import "sweetalert";
 @import "index";
+
+@import "ember-modal-dialog/ember-modal-structure";
+@import "ember-modal-dialog/ember-modal-appearance";
 
 // Component style trougth ember install ember-component-css
 @import "pod-styles";

@@ -3,7 +3,12 @@ export default function() {
   this.get('/users');
   this.get('/users/:id');
   this.get('/chirps/:id');  
-  this.get('/chirps'); 
+  this.get('/chirps');
+  this.post('/users');
+  this.post('/users/:id');
+  this.post('/chirps/:id');  
+  this.post('/chirps');
+  
   // These comments are here to help you get started. Feel free to delete them.
 
   /*

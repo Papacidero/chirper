@@ -3,20 +3,27 @@
 <header>
   <div class="page-container">
 
-    <div class="logo"></div>
+    <div class="logo" {{action 'updateName'}}></div>
 
     <nav>
       {{#link-to "home"}}Home{{/link-to}}
 
       {{#link-to "user"}}
-        <img class="avatar" src="/images/avatar.jpg" />
+        <img class="avatar" src="/images/avatar.jpg" data-profile-image="me"/>
         {{model.user.username}}
       {{/link-to}}
 
-      <button class="chirp">Chirp</button>
+      <button class="chirp" {{action 'toggleComposeModal'}}>Chirp</button>
     </nav>
 
   </div>
 </header>
 
-{{outlet}}
+{{liquid-outlet}}
+
+{{#if showingComposeModal}}
+  {{#modal-dialog translucentOverlay=true close=(action 'toggleComposeModal')}}
+  <!-- We want to be able to close the modal by bubbling a "dismiss"-action from the component too -->
+   {{compose-modal dismiss=(action 'toggleComposeModal')}}
+  {{/modal-dialog}}
+{{/if}}
